@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Citation Generator</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;700;800&display=swap');
+body {
+  background-color: #f7e6df;
+}
+h1 {
+    font-size: 5rem;
+    font-family: 'Great Vibes', cursive;
+    color: #75492b;
+    text-align: center;
+}
+button {
+
+    background-color: #f7e6df;
+    font-family: 'Montserrat', sans-serif;
+  color: #151515;
+  border: 0cm;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  display: block;
+  font-size: 100px;
+  cursor: pointer;
+
+}
+.btn{
+    background-color: #75492b;
+    font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  border: 0cm;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
+  width: 240px;
+  border: 1px solid var(--first-color);
+    border-radius: 50px;
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-semi-bold);
+    text-transform: uppercase;
+    line-height: var(--normal-font-size);
+    padding: 10px 20px;
+    outline: none;
+    transition: all 400ms ease;
+}
+
+#citation {
+    font-size: 25px;
+    text-align: center;
+    font-family:  'Montserrat', sans-serif;
+  color:   #151515;
+  margin-bottom: 100px;
+
+}
+
+
+  </style>
+  <script>
+    function generateCitation() {
+      var citations = [
+        "Cats have it all - admiration, an endless sleep, and company only when they want it. - Rod McKuen",
+        "Time spent with cats is never wasted. - Sigmund Freud",
+        "A dog is the only thing on earth that loves you more than you love yourself. - Josh Billings",
+        "Money can buy you a fine dog, but only love can make him wag his tail. - Kinky Friedman"
+      ];
+      var randomIndex = Math.floor(Math.random() * citations.length);
+      var randomCitation = citations[randomIndex];
+      var citationElement = document.getElementById("citation");
+     citationElement.textContent = randomCitation;
+    }
+  </script>
+<body>
+  <h1>Random Citation of the Day</h1>
+  <button onclick="generateCitation()"><i class="fas fa-paw"></i></button>
+  <p id="citation"></p>
+  <form action="index.html" ><button class="btn">Main page</button></form>
+</body>
+</html>

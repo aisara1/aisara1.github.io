@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Q&A</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+ 
+<style>
+    /* Загрузка шрифтов */
+     @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;700;800&display=swap');
+     
+/* Фон*/
+body {
+background-color: #f7e6df;
+font-family: 'Montserrat', sans-serif;
+   color:  #75492b;
+}
+ 
+ /* Заголовок */
+ .container h2 {
+  text-align: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  font-family: 'Great Vibes', cursive;
+  color:  #75492b;
+  font-size: 4rem;
+}
+
+/* Для расширяемых панелей */
+.card-header {
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+.card-body {
+  padding: 20px;
+}
+.btn-link {
+  font-size: 20px;
+  font-weight: bold;
+  color: #151515;;
+}
+.btn-link:hover,
+.btn-link:focus {
+  color: #222;
+}
+
+/* Иконки панелей при разворачивании и сворачивании*/
+.btn-link::after {
+  display: none;
+}
+.btn-link[aria-expanded="true"]::before {
+  content: "\2212";
+}
+.btn-link[aria-expanded="false"]::before {
+  content: "\002B";
+}
+/*Возврат на главную страницу*/
+.btn-secondary{
+  text-align: center;
+  margin-top: 50px;
+background-color: #75492b;
+font-family: 'Montserrat', sans-serif;
+}
+</style>
+</head>
+<body>
+  <script src="script.js">
+    alert('Helo');
+</script>
+<div class="container">
+  <h2>Questions & Answers</h2>
+ 
+    <div class="card">
+      <div class="card-header" id="one">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" 
+          data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            How often should I groom my pet?
+          </button>
+      </div>
+
+      <div id="collapseOne" class="collapse" aria-labelledby="one">
+        <div class="card-body">
+          It depends on your pet's breed, coat type, and activity level. Generally, dogs with longer coats will require more
+           frequent grooming than dogs with short coats. We recommend bringing your pet in for grooming every 4-6 weeks to keep
+            their coat healthy and shiny.
+        </div>
+      </div>
+    </div>
+
+
+<div class="card">
+      <div class="card-header" id="two">
+          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" 
+          data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Can I stay with my pet during the grooming process?
+          </button>
+      </div>
+      <div id="collapseTwo"  class="collapse" aria-labelledby="two">
+        <div class="card-body">
+          Unfortunately, we do not allow pet owners to stay with their pets during the grooming process. This is for the safety 
+          of both the pet and the groomer, as well as to minimize distractions and ensure that the grooming process is as 
+          efficient as possible.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" id="three">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" 
+            data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            What if my pet has special grooming needs?
+            </button>
+        </div>
+        <div id="collapseThree"  class="collapse" aria-labelledby="three">
+          <div class="card-body">
+            If your pet has special grooming needs, please let us know when you make your appointment. 
+            We will do our best to accommodate your pet's needs and ensure that they receive the appropriate grooming services. </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="four">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" 
+            data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            What kind of grooming services do you offer?
+            </button>
+        </div>
+        <div id="collapseFour"  class="collapse" aria-labelledby="four">
+          <div class="card-body">
+            We offer a wide range of grooming services for dogs and cats, including baths, haircuts, nail trimming, ear cleaning, and more.
+             Please see our website or give us a call for a full list of our services and pricing.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="Five">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" 
+            data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+            How long does a grooming appointment typically take?
+            </button>
+        </div>
+        <div id="collapseFive"  class="collapse" aria-labelledby="five">
+          <div class="card-body">
+            The length of a grooming appointment depends on the type of service and the size and breed of your pet. On average, a grooming appointment 
+            can take anywhere from 1-3 hours. We will provide you with an estimated time frame when you make your appointment. </div>
+        </div>
+      </div>
+      <a href="index.html" class="btn btn-secondary" role="button" aria-pressed="true">Main page</a>
+</body>
+</html>

@@ -1,0 +1,148 @@
+.game{
+    width: 600px;
+    height: 200px;
+    border-bottom: 1px solid #000;
+    margin: auto;
+}
+
+#cat{
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/cat.png);
+    background-size: 50px 50px;
+    position: relative;
+    top: 150px;
+}
+
+#cactus{
+    width: 20px;
+    height: 40px;
+    background-image: url(../img/cactus.png);
+    background-size: 20px 40px;
+    position: relative;
+    top: 110px;
+    left: 580px;
+    animation: cactusMov 1s infinite linear;
+}
+@keyframes cactusMov {
+    0%{
+        left: 580px;
+    }
+    100%{
+        left: -20px;
+    }
+    
+}
+
+.jump{
+    animation: jump 0.3s linear;
+}
+
+@keyframes jump {
+    0%{
+        top: 150px;
+    }
+    30%{
+        top: 130px;
+    }
+    50%{
+        top: 80px;
+    }
+    80%{
+        top: 130px;
+    }
+    100%{
+        top: 150px;
+    }
+}
+
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;700;800&display=swap');
+/*---------------VARIABLES CSS-------------------*/
+:root {
+    --header-height: 6.25rem;
+
+    /*---------------COLLORS -------------------*/
+    --main-color: #f7e6df;
+    --first-color: #75492b;
+    --second-color: #dfd6a7;
+    --white-color: #ffffff;
+    --black-color: #151515;
+
+    /*---------------FONT  AND TYPOGRAPHY-------------------*/
+    --font-cursive: 'Great Vibes', cursive;
+    --body-font: 'Montserrat', sans-serif;
+    --big-font-size: 3rem;
+    --h1-font-size: 2.25rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.25rem;
+    --normal-font-size: 1rem;
+    --small-font-size: 0.813rem;
+
+    /*---------------FONT WEIGHT-------------------*/
+    --font-light: 300;
+    --font-medium: 400;
+    --font-semi-bold: 700;
+    --font-bold: 800;
+
+    /*---------------MARGINS-------------------*/
+    --mb-05: 0.5rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    --mb-3: 3rem;
+
+    /*---------------Z INDEXS-------------------*/
+    --Z-fixed: 100;
+    --z-tooltip: 10;
+    --z_negative: -1;
+}
+/* base */
+*, ::after, ::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: var(--main-color);
+    font-size: var(--normal-font-size);
+    font-family: var(--body-font);
+    overflow-x: hidden;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+h1{
+    font-family: var(--body-font);
+    font-size: var(--h1-font-size);
+    
+}
+.btn {
+    background-color: #75492b;
+font-family: 'Montserrat', sans-serif;
+color: #ffffff;
+border: 0cm;
+text-align: center;
+margin: 0 auto;
+display: block;
+cursor: pointer;
+width: 240px;
+border: 1px solid var(--first-color);
+border-radius: 50px;
+font-size: var(--normal-font-size);
+font-weight: var(--font-semi-bold);
+text-transform: uppercase;
+line-height: var(--normal-font-size);
+padding: 10px 20px;
+outline: none;
+transition: all 400ms ease;
+width: 240px;
+}

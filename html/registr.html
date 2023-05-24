@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Record</title>
+<style>
+      @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;700;800&display=swap');
+    body {
+  text-align: center;
+  background-color: #f7e6df;
+}
+.btn {
+        background-color: #75492b;
+    font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  border: 0cm;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
+  width: 240px;
+  border: 1px solid var(--first-color);
+    border-radius: 50px;
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-semi-bold);
+    text-transform: uppercase;
+    line-height: var(--normal-font-size);
+    padding: 10px 20px;
+    outline: none;
+    transition: all 400ms ease;
+  width: 240px;
+    }
+.rec{
+    background-color:  #ffffff;
+}
+p{
+    font-size: 2rem;
+    color: #151515;
+}
+h1 {
+  font-size: 4rem;
+    font-family: 'Great Vibes', cursive;
+    color: #75492b;
+    align-items: center;
+}
+ul {
+    font-family: 'Montserrat', sans-serif;
+  list-style-type: none;
+  padding: 20px;
+
+}
+li {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+li:hover {
+  background-color: #f5f5f5;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="time"] {
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
+#message {
+  color: #333;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+</style>
+</head>
+<body>
+    <h1>Online record</h1>
+<div class="rec">
+
+  <p>Chooose the service:</p>
+  <ul>
+    <li id="service1">Comprehensive care for cats</li>
+    <li id="service2">Comprehensive care for dogs</li>
+    <li id="service3">Creative grooming for pets</li>
+  </ul>
+
+  <p>Choose date and time:</p>
+  <input type="date" id="dateInput">
+  <input type="time" id="timeInput">
+
+  <p>Enter your name:</p>
+  <input type="text" id="nameInput">
+
+  <p id="message"></p>
+</div>
+<form action="index.html" ><button class="btn">Main page</button></form>
+
+
+  <script>
+    var selectedService = null;
+    var service1 = document.getElementById("service1");
+    var service2 = document.getElementById("service2");
+    var service3 = document.getElementById("service3");
+
+    service1.addEventListener("click", function() {
+      selectService(service1);
+    });
+
+    service2.addEventListener("click", function() {
+      selectService(service2);
+    });
+
+    service3.addEventListener("click", function() {
+      selectService(service3);
+    });
+
+
+    function selectService(service) {
+      if (selectedService) {
+        unhighlightService(selectedService);
+      }
+  
+      selectedService = service;
+      highlightService(service);
+    }
+
+
+    service1.addEventListener("mouseover", function() {
+      if (service1 !== selectedService) {
+        highlightService(service1);
+      }
+    });
+
+    service1.addEventListener("mouseout", function() {
+      if (service1 !== selectedService) {
+        unhighlightService(service1);
+      }
+    });
+
+    service2.addEventListener("mouseover", function() {
+      if (service2 !== selectedService) {
+        highlightService(service2);
+      }
+    });
+
+    service2.addEventListener("mouseout", function() {
+      if (service2 !== selectedService) {
+        unhighlightService(service2);
+      }
+    });
+
+    service3.addEventListener("mouseover", function() {
+      if (service3 !== selectedService) {
+        highlightService(service3);
+      }
+    });
+
+    service3.addEventListener("mouseout", function() {
+      if (service3 !== selectedService) {
+        unhighlightService(service3);
+      }
+    });
+
+
+    var dateInput = document.getElementById("dateInput");
+    var timeInput = document.getElementById("timeInput");
+    var nameInput = document.getElementById("nameInput");
+
+    nameInput.addEventListener("keypress", function(event) {
+      if (event.key === "Enter") {
+        var name = nameInput.value;
+        var selectedDate = dateInput.value;
+        var selectedTime = timeInput.value;
+
+
+if (selectedService && selectedDate && selectedTime) {
+          showMessage(" You are registered for the service " + selectedService.textContent + " with name " + name + " on the " + selectedDate + " at " + selectedTime);
+        } else {
+          showMessage("Please, fill in all fields.");
+        }
+      }
+    });
+
+    function highlightService(service) {
+      service.style.backgroundColor = "lightgrey";
+    }
+
+    function unhighlightService(service) {
+      service.style.backgroundColor = "";
+    }
+
+    function showMessage(message) {
+      var messageElement = document.getElementById("message");
+      messageElement.innerHTML = message;
+    }
+  </script>
+
+</body>
+</html>

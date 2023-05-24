@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Services</title>
+  <style>
+          @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;700;800&display=swap');
+    body {
+      background-color: #f7e6df;
+    }
+    h1 {
+    font-size: 5rem;
+    font-family: 'Great Vibes', cursive;
+    color: #75492b;
+    text-align: center;
+    }
+    .service {
+        height: auto;
+    background-color: #ffffff;
+    box-shadow: 8px 8px 16px rgba(0,0,0,0.25);
+    border-radius: 30px;
+    padding: 3rem;
+    transition: all 400ms ease-in-out;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+      width: 30%;
+    }
+
+    .service h2 {
+    color:  #151515;
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    }
+
+    .btn {
+        background-color: #75492b;
+    font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  border: 0cm;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  cursor: pointer;
+  width: 240px;
+  border: 1px solid var(--first-color);
+    border-radius: 50px;
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-semi-bold);
+    text-transform: uppercase;
+    line-height: var(--normal-font-size);
+    padding: 10px 20px;
+    outline: none;
+    transition: all 400ms ease;
+  width: 240px;
+    }
+    .service .description {
+      display: none;
+    }
+    #modal {
+      background-color: rgba(0, 0, 0, 0.5);
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+    }
+
+    #modalContent {
+      background-color: #fff;
+      border-radius: 5px;
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 20px;
+      color:  #151515;
+    font-family: 'Montserrat', sans-serif;
+    }
+
+    #modalContent h2 {
+      margin-top: 0;
+    }
+
+    #closeBtn {
+      margin-top: 10px;
+      background-color: #75492b;
+    align-items: center;
+    }
+    .end{
+      display:flex;
+     justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Services</h1>
+  
+  <div id="servicesContainer">
+    <div class="service">
+      <h2>Comprehensive care for dogs</h2>
+      <p class="description">bathing and drying - 3500 tg, 
+        haircut - 5000 tg, 
+        nail clipping - 1900 tg, 
+        eye and ear cleaning - 2800 tg,
+        combing - 4500 tg,
+        teeth cleaning - 2500 tg</p>
+      <button class="btn">Learn More</button>
+    </div>
+</div>
+
+    <div class="service">
+      <h2>Comprehensive care for cats</h2>
+      <p class="description">bathing and drying - 2500 tg,
+        haircut - 4000 tg, 
+        nail clipping - 900 tg,
+        eye and ear cleaning - 1800 tg,
+        combing - 3500 tg,
+        teeth cleaning - 1500 tg</p>
+        <button class="btn">Learn More</button>
+    </div>
+</div>
+
+    <div class="service">
+      <h2>Creative grooming for pets</h2>
+      <p class="description">paint staining - 1500 tg,
+        coloring with crayons - 1000 tg, 
+        tattoo ink - 1300 tg,
+        glitter tattoo - 1000 tg,
+        creative haircut - 2500 tg,
+        rhinestones - 1500 tg</p>
+      <button class="btn">Learn More</button>
+    </div>
+
+
+  </div>
+  <div class="end">
+  <form action="index.html" ><button class="btn">Main page</button></form>
+  <form action="registr.html" ><button class="btn">Record</button></form>
+  </div>
+
+
+  <div id="modal">
+    <div id="modalContent">
+      <h2>Title</h2>
+      <p>Content</p>
+      <button id="closeBtn" class="btn">Close</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var serviceButtons = document.querySelectorAll(".service .btn");
+      var modal = document.getElementById("modal");
+      var modalContent = document.getElementById("modalContent");
+      var closeBtn = document.getElementById("closeBtn");
+
+
+serviceButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+          var service = this.parentNode;
+          var title = service.querySelector("h2").textContent;
+          var description = service.querySelector(".description").textContent;
+
+          modalContent.innerHTML = `
+            <h2>${title}</h2>
+            <p>${description}</p>
+            <button id="closeBtn" class="btn">Close</button>
+          `;
+
+          closeBtn = document.getElementById("closeBtn");
+          closeBtn.addEventListener("click", function() {
+            modal.style.display = "none";
+          });
+
+          modal.style.display = "block";
+        });
+      });
+    });
+  </script>
+</body>
+</html>
